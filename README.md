@@ -2,9 +2,9 @@
 
 自动预约厦门大学马来西亚分校（XMUM）图书馆自习室。支持全部 4 种房间类型，使用 Gemini AI 自动识别登录验证码。
 
-**本项目是一个 [Claude Code](https://claude.ai/code) Agent Skill**，安装后可由 AI Agent 直接调用，配合 Claude Code 的定时任务功能实现每天全自动预约，无需手动干预。
+**本项目是一个 Agent Skill**，兼容 [Claude Code](https://claude.ai/code) 与 [openclaw](https://github.com/anthropics/claude-code)。安装后 AI Agent 会掌握如何登录系统、查询空位、选择时间段并完成预约——整个流程由 AI 自主决策和操控脚本执行，无需人工介入。
 
-> 推荐使用 [Claude Code](https://claude.ai/code)：内置定时执行功能，配置一次后每天自动运行，完全解放双手。
+> 🔥 **推荐搭配 openclaw 定时功能使用**：openclaw 支持定时自动执行 Skill，设置一次后每天固定时间由 AI 自动运行预约，完全解放双手。
 
 ---
 
@@ -38,7 +38,7 @@
 curl -sSL https://raw.githubusercontent.com/recomby-ai/xmum-room-booking/main/install.sh | bash
 ```
 
-自动完成：安装依赖 → 复制 Skill 到 Claude Code → 引导配置账号
+自动完成：安装依赖 → 复制 Skill 到 openclaw → 引导配置账号
 
 ### 方式二：手动安装
 
