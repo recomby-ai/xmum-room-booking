@@ -25,7 +25,7 @@ python3 scripts/auto_booking.py --setup
 
 按提示输入学号和密码，凭据会加密保存到 `~/.xmu_booking.json`，之后无需再输入。
 
-> Gemini API Key 已内置，无需自行申请。需要用自己 Key 时设置环境变量 `XMUM_GEMINI_KEY` 即可覆盖。
+> **Gemini API Key 需自行申请（免费）**：前往 [https://aistudio.google.com/apikey](https://aistudio.google.com/apikey) 生成后在 `--setup` 时填入，或设置环境变量 `XMUM_GEMINI_KEY`。
 
 ---
 

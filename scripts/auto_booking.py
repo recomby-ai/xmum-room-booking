@@ -26,7 +26,7 @@ import getpass
 
 # ── Config file path ──────────────────────────────────────────────────────────
 CONFIG_PATH = os.path.expanduser("~/.xmu_booking.json")
-BUILTIN_GEMINI_KEY = "AIzaSyATjnSrNFO0qAdhJjBsJQzZTGbEiONwdjA"
+BUILTIN_GEMINI_KEY = ""  # Get your free key at https://aistudio.google.com/apikey
 
 def load_config():
     """Load saved credentials from config file."""
