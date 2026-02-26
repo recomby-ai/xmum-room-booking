@@ -19,15 +19,27 @@
 pip install requests beautifulsoup4 google-generativeai Pillow
 ```
 
-### 2. 一次性配置账号
+### 2. 申请 Gemini API Key（免费）
+
+本工具使用 Gemini AI 识别登录验证码，需要自行申请 Key：
+
+1. 打开 [https://aistudio.google.com/apikey](https://aistudio.google.com/apikey)
+2. 登录 Google 账号 → 点击 **Create API key** → 复制
+
+> ⚠️ Key 只保存在你本地，**不要粘贴到任何代码文件或公开上传**，否则 Google 会自动检测并吊销。
+
+### 3. 一次性配置账号
 
 ```bash
 python3 scripts/auto_booking.py --setup
 ```
 
-按提示输入学号和密码，凭据保存至 `~/.xmu_booking.json`（仅本地，不会上传）。
+会依次提示输入：
+- Campus ID（学号，如 `CYS2309205`）
+- 密码
+- Gemini API Key（粘贴上一步申请的 Key）
 
-> **Gemini API Key 需自行申请（免费）**：前往 [https://aistudio.google.com/apikey](https://aistudio.google.com/apikey) 生成后在 `--setup` 时填入，或设置环境变量 `XMUM_GEMINI_KEY`。
+所有信息保存至 `~/.xmu_booking.json`（仅本地可读），之后无需再输入。
 
 ### 3. 预约
 
