@@ -1,6 +1,6 @@
-# XMU Room Booking
+# XMUM Room Booking
 
-自动预约厦门大学马来西亚分校（XMU Malaysia）图书馆自习室。支持全部 4 种房间类型，使用 Gemini AI 自动识别登录验证码。
+自动预约厦门大学马来西亚分校（XMUM）图书馆自习室。支持全部 4 种房间类型，使用 Gemini AI 自动识别登录验证码。
 
 ## 支持的房间类型
 
@@ -27,7 +27,7 @@ python3 scripts/auto_booking.py --setup
 
 按提示输入学号和密码，凭据保存至 `~/.xmu_booking.json`（仅本地，不会上传）。
 
-> **Gemini API Key 已内置**，无需自行申请。如需使用自己的 Key，在 setup 时填入，或设置环境变量 `XMU_GEMINI_KEY`。
+> **Gemini API Key 已内置**，无需自行申请。如需使用自己的 Key，在 setup 时填入，或设置环境变量 `XMUM_GEMINI_KEY`。
 
 ### 3. 预约
 
@@ -46,7 +46,7 @@ python3 scripts/auto_booking.py --room-type success
 
 ## 说明
 
-- XMU 系统限制只能预约**今天及未来 2 天**，自动模式默认预约 2 天后
+- XMUM 系统限制只能预约**今天及未来 2 天**，自动模式默认预约 2 天后
 - 登录验证码识别失败时自动重试，最多 3 次
 - 每个日期每人只能预约一个房间
 
@@ -59,6 +59,6 @@ python3 scripts/auto_booking.py --room-type success
 ## 免责声明
 
 1. **仅限个人使用**：本工具仅供使用者预约**自己账号**下的自习室，禁止用于代抢、转让或任何形式的商业用途（如收费帮人抢房间）。
-2. **遵守学校规定**：使用前请确认符合 XMU 图书馆及 eServices 系统的使用条款。若校方明确禁止自动化访问，请停止使用。
+2. **遵守学校规定**：使用前请确认符合 XMUM 图书馆及 eServices 系统的使用条款。若校方明确禁止自动化访问，请停止使用。
 3. **Gemini API Key**：项目内置了一个共享 Key 供快速体验，但**强烈建议自行申请**，避免额度耗尽影响使用。免费申请地址：[https://aistudio.google.com/apikey](https://aistudio.google.com/apikey)，申请后在 `--setup` 时填入即可。
 4. **风险自负**：本工具按现状提供，作者不对账号封禁、预约失败或任何使用后果承担责任。

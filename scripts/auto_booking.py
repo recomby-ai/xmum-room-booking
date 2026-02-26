@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-XMU eServices Auto Booking Script
+XMUM eServices Auto Booking Script
 Automatically login and book library rooms.
 
 First-time setup:
   python3 auto_booking.py --setup
 
 Credential priority:
-  1. Environment variables (XMU_USERNAME, XMU_PASSWORD, XMU_GEMINI_KEY)
+  1. Environment variables (XMUM_USERNAME, XMUM_PASSWORD, XMUM_GEMINI_KEY)
   2. Config file (~/.xmu_booking.json, saved via --setup)
 """
 
@@ -42,7 +42,7 @@ def load_config():
 def run_setup():
     """Interactive first-time credential setup."""
     print("=" * 60)
-    print("XMU Booking — First-time Setup")
+    print("XMUM Booking — First-time Setup")
     print("=" * 60)
     print("Credentials will be saved to ~/.xmu_booking.json")
     print("(readable only by you, never uploaded anywhere)\n")
@@ -71,9 +71,9 @@ def run_setup():
 
 # ── Load credentials (env vars override config file) ─────────────────────────
 _cfg = load_config()
-GEMINI_API_KEY = os.environ.get("XMU_GEMINI_KEY") or _cfg.get("gemini_key") or BUILTIN_GEMINI_KEY
-USERNAME       = os.environ.get("XMU_USERNAME")   or _cfg.get("username", "")
-PASSWORD       = os.environ.get("XMU_PASSWORD")   or _cfg.get("password", "")
+GEMINI_API_KEY = os.environ.get("XMUM_GEMINI_KEY") or _cfg.get("gemini_key") or BUILTIN_GEMINI_KEY
+USERNAME       = os.environ.get("XMUM_USERNAME")   or _cfg.get("username", "")
+PASSWORD       = os.environ.get("XMUM_PASSWORD")   or _cfg.get("password", "")
 
 BASE_URL = "https://eservices.xmu.edu.my"
 
@@ -95,9 +95,9 @@ WEEKEND_END   = "17:00"
 def check_credentials():
     missing = []
     if not USERNAME:
-        missing.append("XMU_USERNAME")
+        missing.append("XMUM_USERNAME")
     if not PASSWORD:
-        missing.append("XMU_PASSWORD")
+        missing.append("XMUM_PASSWORD")
     if missing:
         print("✗ Missing environment variables:", ", ".join(missing))
         print("  See SETUP.md for configuration instructions.")
@@ -120,7 +120,7 @@ def recognize_captcha(image_content):
 
 def login(session):
     print("=" * 60)
-    print("Logging in to XMU eServices...")
+    print("Logging in to XMUM eServices...")
     print("=" * 60)
     try:
         print("\n[1/4] Fetching login page...")
@@ -377,7 +377,7 @@ def book_rooms(session, target_date=None, any_time=False, room_type="group"):
 
 def main():
     parser = argparse.ArgumentParser(
-        description="XMU Auto Booking — books library rooms automatically"
+        description="XMUM Auto Booking — books library rooms automatically"
     )
     parser.add_argument(
         "--setup", action="store_true",
@@ -402,7 +402,7 @@ def main():
 
     print("\n")
     print("╔" + "=" * 58 + "╗")
-    print("║" + " " * 15 + "XMU Auto Booking System" + " " * 20 + "║")
+    print("║" + " " * 15 + "XMUM Auto Booking System" + " " * 20 + "║")
     print("╚" + "=" * 58 + "╝")
     print()
     print(f"User:      {USERNAME}")
