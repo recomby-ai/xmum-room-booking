@@ -45,7 +45,7 @@ curl -sSL https://raw.githubusercontent.com/recomby-ai/xmum-room-booking/main/in
 ```bash
 git clone https://github.com/recomby-ai/xmum-room-booking.git
 cd xmum-room-booking
-pip install requests beautifulsoup4 google-generativeai Pillow
+pip install requests beautifulsoup4 google-genai Pillow
 python3 skill/scripts/auto_booking.py --setup
 ```
 

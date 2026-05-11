@@ -22,7 +22,7 @@ echo "✓ Skill installed"
 # 2. Install Python dependencies
 echo ""
 echo "[2/3] Installing Python dependencies ..."
-pip3 install -q requests beautifulsoup4 google-generativeai Pillow
+pip3 install -q requests beautifulsoup4 google-genai Pillow
 echo "✓ Dependencies installed"
 
 # 3. First-time setup

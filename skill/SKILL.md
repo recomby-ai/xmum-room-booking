@@ -13,7 +13,7 @@ description: Books XMUM (Xiamen University Malaysia) library study rooms automat
 
 ```bash
 # 安装依赖
-pip install requests beautifulsoup4 google-generativeai Pillow
+pip install requests beautifulsoup4 google-genai Pillow
 
 # 配置账号（保存到 ~/.xmu_booking.json）
 python3 scripts/auto_booking.py --setup

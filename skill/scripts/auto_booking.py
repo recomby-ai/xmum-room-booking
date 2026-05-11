@@ -15,7 +15,7 @@ import requests
 from bs4 import BeautifulSoup
 import time
 from datetime import datetime, timedelta
-import google.generativeai as genai
+from google import genai
 from PIL import Image
 import io
 import os
@@ -126,11 +126,11 @@ def check_credentials():
 
 def recognize_captcha(image_content):
     try:
-        genai.configure(api_key=GEMINI_API_KEY)
-        model = genai.GenerativeModel("gemini-flash-latest")
+        client = genai.Client(api_key=GEMINI_API_KEY)
         img = Image.open(io.BytesIO(image_content))
-        response = model.generate_content(
-            ["Return ONLY the captcha characters, no explanations.", img]
+        response = client.models.generate_content(
+            model="gemini-flash-latest",
+            contents=["Return ONLY the captcha characters, no explanations.", img],
         )
         return response.text.strip()
     except Exception as e:
